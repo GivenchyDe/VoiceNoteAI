@@ -1,0 +1,33 @@
+# Maven
+**/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# Node
+**/node_modules/
+**/dist/
+**/.vite/
+
+# Logs & OS
+*.log
+.DS_Store
+Thumbs.db
+
+# Spring Boot
+*.jar
+*.war
+
+# Environment
+.env
+.env.local
+
+# Upload files
+vo_ai_service/upload/
+upload/

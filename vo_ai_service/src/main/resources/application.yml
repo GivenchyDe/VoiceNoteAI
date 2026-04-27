@@ -1,0 +1,51 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/voicenoteai?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+  jackson:
+    date-format: yyyy.MM.dd-HH:mm:ss
+    time-zone: GMT+8
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 100MB
+
+# 文件上传路径（Windows 用反斜杠或正斜杠都行）
+file:
+  upload-path: d:/Develop/project/voicenoteai/vo_ai_service/upload/
+
+# 讯飞语音配置
+xfyun:
+  appid: da9fb846
+  secretKey: f5366a40ed7c42f426eaee96df120545
+
+# MyBatis-Plus配置
+mybatis-plus:
+  mapper-locations: classpath:org/example/vo_ai_service/mapper/*.xml
+  type-aliases-package: org.example.vo_ai_service.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# springdoc-openapi项目配置
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: org.example.vo_ai_service
+# knife4j的增强配置，不需要增强可以不配
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn

@@ -1,0 +1,18 @@
+import request from '@/utils/request.js'
+
+export const login = (data) => request.post('/admin/login', data)
+export const getDashboard = () => request.get('/admin/dashboard')
+export const getUserList = (params) => request.get('/admin/user/list', { params })
+export const updateUserStatus = (id, status) => request.put(`/admin/user/status/${id}?status=${status}`)
+export const getLogList = (params) => request.get('/admin/log/list', { params })
+export const getFeedbackList = (params) => request.get('/admin/feedback/list', { params })
+export const replyFeedback = (id, data) => request.put(`/admin/feedback/reply/${id}`, data)
+export const getNoticeList = (params) => request.get('/admin/notice/list', { params })
+export const addNotice = (data) => request.post('/admin/notice/add', data)
+export const updateNotice = (data) => request.put('/admin/notice/update', data)
+export const deleteNotice = (id) => request.delete(`/admin/notice/delete/${id}`)
+export const getAdminList = (params) => request.get('/admin/account/list', { params })
+export const addAdmin = (data) => request.post('/admin/account/add', data)
+export const updateAdmin = (data) => request.put('/admin/account/update', data)
+export const deleteAdmin = (id) => request.delete(`/admin/account/delete/${id}`)
+export const updateAdminStatus = (id, status) => request.put(`/admin/account/status/${id}?status=${status}`)
